@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+		<title>함수</title>
+		<meta name="description" content="">
+		<meta name="author" content="user1">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	</head>
+
+
+	<body>
+        <h2>함수</h2>
+
+		<script>
+            
+            /* 함수는 입력, 할일, 출력 3가지로 구성됨 
+                이름 있는 함수는 없는 함수보다 먼저 처리됨 */
+
+            function send(){
+                alert('경고');
+            }
+            send();
+
+            /* 전역변수 - 스크립트 내에서 쓰는 변수(어디서든 사용가능)*/
+            var a = 10;
+            var b = 20; 
+
+            // 인자를 total 값에 저장
+            var total = add(a, b); 
+            document.write(total); // = document.write(add(a, b));
+
+            function add(x,y){
+                // 매개변수 이름은 본인이 지정할 수 있으나 함수 안에서 동일하게 사용 돼야함
+                
+                /* 지역변수 -  함수 안에서만 쓰는 변수 */
+                var sum = x + y;
+                return sum;
+            }
+
+        </script>
+
+        <h2>Object 객체</h2>
+        <script>
+            // 객체 = 변수 + 함수
+            /* 
+                var obj = new Object(); 
+                var obj ={};
+            */
+
+            var baby={};
+            baby.age="2살";
+            baby.sex="남자";
+            baby.birthday="5월1일";
+
+            document.write(baby.age);
+
+            var baby = {
+                // property
+                age: '2살',
+                sex: '남자',
+                birthday: '5월 1일',
+                
+                // function
+                getAge: getAge
+                /* 
+                getAge: getAge(){
+                    return this.age;
+                }
+
+                */
+            }
+
+            // 객체의 함수는 객체 밖에 위치해도 됨
+            function getAge(){
+                return this.age;
+            }
+
+            var age = baby.getAge();
+            document.write(age);
+        </script>
+	</body>
+</html>
