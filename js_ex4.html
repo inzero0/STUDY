@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+		<title>반복문</title>
+		<meta name="description" content="">
+		<meta name="author" content="user1">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	</head>
+
+
+	<body>
+        <h2>반복문</h2>
+        <script>
+            /*             
+            var i = 2;
+            document.write(i + '<br/>');
+            i += 2;
+            document.write(i + '<br/>');
+            i += 2;
+            document.write(i + '<br/>');
+            */
+
+            /* for(시작값;끝값;중간값) {
+                실제 할 일
+            }*/
+
+            /* i 초기값 입력, i가 12보다 작거나 같을 때, i에서 2씩 더하기*/
+            for(var i = 2; i<=12; i += 2){
+                document.write(i + '<br/>');
+            } 
+            /* i 초기값 입력, i가 0보다 크거나 같을 때, i를 1씩 빼라(++ = 1씩 더해라)*/
+            for(var i = 12; i>=0; i -- ){
+                document.write(i + '<br/>');
+                if(i == 6) break; // break 반복문 정지
+            } 
+
+            /* 변수 지정
+                while(12보다 작을 때(끝값)) {
+                실제 할 일
+            }*/
+
+            var i =2;
+            while(i<=12){
+                document.write('3x' + i + '=' + (i*3) + '<br/>');
+                i ++;
+            }
+        </script>
+	</body>
+</html>

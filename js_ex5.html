@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+		<title>배열</title>
+		<meta name="description" content="">
+		<meta name="author" content="user1">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	</head>
+
+
+	<body>
+        <h2>배열</h2>
+        <script>
+            /* 
+                배열 만들기
+                var arr = [];
+                var arr = new Array();
+                배열은 0 = 첫번째
+                */
+            /*
+                var fruits = [];
+                fruits[0] = '사과';
+                fruits[1] = '배';
+                fruits[2] = '바나나';
+            */
+
+           var fruits = ['사과', '배', '바나나', '참외', '딸기'];
+           var animals = ['사자', '호랑이', '곰'];
+           
+           var newArr3 = fruits.concat(animals); //문자를 붙이거나 배열을 붙일 때 concat 사용
+
+           var amount = fruits.length;
+           var newStr = fruits.join('/');
+           var newArr = fruits.reverse();
+           var newArr2 = fruits.sort(function(a,b){
+               return b-a;
+           });
+           
+           var newArr4 = fruits.slice(1,3);
+           var newArr5 = fruits.splice(1,3);
+
+           document.write(fruits+'<br/>');
+           document.write(fruits[0]+'<br/>'); //배열에서 첫번째
+           document.write(amount+'<br/>'); //length 갯수
+           document.write(newStr+'<br/>'); //join (a) 내용 뒤 a 추가 
+           document.write(newArr+'<br/>'); // reverse 역순
+           document.write(newArr2+'<br/>'); //sort(function(a,b){return b-a;}) 역순 2
+           document.write(newArr3+'<br/>'); // a.concat(b) a 배열 + b 배열
+           document.write(newArr4+'<br/>'); // slice(a,b) 원본유지 a부터 b-1까지
+           document.write(newArr5+'<br/>'); // splice(a,b) 원본손실, a부터 b까지
+
+        </script>
+
+        <h2>값 추가하기 - push</h2>
+        <p>기존의 값 뒤에 추가한다.</p>
+        <script>
+            var beers = ['하이네켄', '코로나', '스텔라', '카스'];
+            beers.push('수제맥수', '제주비어');
+            document.write(beers);
+        </script>
+
+        <h2>값 추가하기 - unshift</h2>
+        <p>기존의 값 앞에 추가한다.</p>
+        <script>
+            var beers = ['하이네켄', '코로나', '스텔라', '카스'];
+            beers.unshift('수제맥수', '제주비어');
+            document.write(beers);
+        </script>
+
+        <h2>값 삭제하기 - pop</h2>
+        <p>기존의 가장 뒤에 위치한 값 삭제</p>
+        <script>
+            var beers = ['하이네켄', '코로나', '스텔라', '카스'];
+            beers.pop();
+            document.write(beers);
+        </script>
+
+        <h2>값 삭제하기 - shift</h2>
+        <p>기존의 가장 앞에 위치한 값 삭제</p>
+        <script>
+            var beers = ['하이네켄', '코로나', '스텔라', '카스'];
+            beers.shift();
+            document.write(beers);
+        </script>
+	</body>
+</html>
