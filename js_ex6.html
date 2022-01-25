@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+		<title>문자열</title>
+		<meta name="description" content="">
+		<meta name="author" content="user1">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	</head>
+
+
+	<body>
+        <h2>문자열</h2>
+        <script>
+            var str = 'hello world';
+            var str1 = 'javascript';
+
+            var str2 = str.indexOf('world');
+            console.log(str2);
+
+            var newStr1 = str.concat(str1);
+            //  concat() 문자열 합치기
+
+            var n = str.charAt(2); 
+            console.log(n);
+            // charAt(n) 문자열에서 인덱스 번호 n을 구하는 것
+            
+            var str3 = str.indexOf('worlds');
+            console.log(str3);
+            // 존재유무 검사 시 사용함 indexOf
+
+        </script>
+        <h2>타이머</h2>
+        <script>
+            // setTimeout(할일, 시간); 일정 시간이 지난 후 실행, 지정된 시간을 기다린 후 작업
+            // setTimeout(function(){alert('오늘뭐해');},3000)
+
+            //clearTimeout(변수); 타이머 작동하지 않음(setTimeout을 변수화 피루)
+            var timer = setTimeout(function(){alert('밥먹자'); },3000)
+            clearTimeout(timer);
+
+            //SetInverval(할일, 시간); 일정 시간마다 할 일 
+            setInterval(function(){alert('안녕하세요');}, 3000);
+
+            //clearInterval(변수); 타이머 작동하지 않음 
+            var timer2 = setInterval(function(){alert('안녕하세요');}, 3000);
+            clearInterval (timer2);
+        </script>
+
+	</body>
+</html>

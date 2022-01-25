@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript Basic Selector</title>
+  
+  
+  
+  
+  
+</head>
+
+<body>
+<h1 id="title">Javascript Basic Selector</h1>
+  <div class="container">
+	<ul id="list1" class="list">
+		<li>li 1</li>
+		<li>li 2</li>
+		<li>li 3</li>
+		<li>li 4</li>
+		<li>li 5</li>
+	</ul>
+</div>
+<div class="container">
+	<ul id="list2" class="list">
+		<li>li 1</li>
+		<li>li 2</li>
+		<li>li 3</li>
+		<li>li 4</li>
+		<li>li 5</li>
+	</ul>
+</div>
+<div class="container">
+	<ul id="list3" class="list">
+		<li class="red" name="red">li 1</li>
+		<li>li 2</li>
+		<li>li 3</li>
+		<li>li 4</li>
+		<li id="list3_5">li 5</li>
+		<li>li 6</li>
+	</ul>
+</div>
+
+<div class="container">
+	<div id="box">
+		box level1
+		<div>
+			box level2
+			<div>
+				box level3
+			</div>
+		</div>
+	</div>
+</div>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil id, corporis, blanditiis quam dicta amet quidem eum impedit harum consequuntur aspernatur ratione nostrum vel culpa fuga! Dolore quibusdam nisi temporibus!
+</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil id, corporis, blanditiis quam dicta amet quidem eum impedit harum consequuntur aspernatur ratione nostrum vel culpa fuga! Dolore quibusdam nisi temporibus!
+</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil id, corporis, blanditiis quam dicta amet quidem eum impedit harum consequuntur aspernatur ratione nostrum vel culpa fuga! Dolore quibusdam nisi temporibus!
+</p>
+<script>
+	//document.getElementById('ID 이름') 해당 id를 가진 요소 찾기 (문서에 id는 하나라 element) 
+	//document.getElementsByClassName('ID 이름') 해당 클래스를 가진 요소 찾기 (문서에 class는 하나 이상으로 element)
+	//document.getElementsByTagName('태그') 해당 태그를 가진 요소 찾기 (문서에 tag는 하나 이상으로 element)
+	//document.querySelector('css 선택자') 해당 css 선택자를 가진 요소 찾기
+	/* 
+		getElementBy vs querySelector 
+		getElementBy ~ 가 속도가 빠름
+		querySelector css에서 사용되는 선택자 사용 가능함
+	*/
+	
+	var firstTitle = document.getElementById('title');
+	var myLIst = document.getElementsByClassName('list');
+	var paragraphs = document.getElementsByTagName('p');
+	var myList2 = document.querySelector('.list .red');
+
+	console.log(firstTitle);
+	console.log(myLIst);
+	console.log(paragraphs);
+	console.log(myList2);
+
+</script>
+  
+</body>
+</html>
