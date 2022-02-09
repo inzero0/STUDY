@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="robots" content="index, follow">
+<title></title>	
+<link rel="stylesheet" href="css/main.css">
+<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+
+</head>
+<body>
+
+    <button id="aplay">Play music</button>
+    <button id="apause">Pause music</button>
+    <!-- 버튼에 onclick 바로 쓰는 건 웹표준에 어긋남 -->
+    <br>
+    <hr>
+    <button id="vplay">Play video</button>
+    <button id="vpause">Pause video</button>
+
+    <video src="video/vivaldi.mp4" muted id="myVideo"></video>
+    <audio src="audio/Honey_Bee_01_web.mp3" id="myaudio"></audio>
+
+    <script>
+        $(function(){
+            var myVideo = $('#myVideo');
+
+            $('#vplay').click(function(){
+                myVideo.get(0).play();
+                // jquery에서 비디오를 직접조정하기 위해서는 get 엘리멘트를 써야함
+            })
+            $('#vpause').click(function(){
+                myVideo.get(0).pause();
+            })
+        })
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
