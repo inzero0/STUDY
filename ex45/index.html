@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tab-srapper {width: 960px; margin:auto;}
+        .tab-menu {padding-left: 0; position: relative; z-index: 1;}
+        .tab-menu li {float: left; list-style: none; margin-right: 10px;}
+        .tab-menu:after {content:''; display: block; clear: both;}
+        .tab-menu li a {color: #999; text-transform: uppercase; font-weight: bold; line-height: 27px; text-decoration: none; padding: 0 20px; display: block;}
+        #tab-content {min-height: 300px;}
+        #tab-content > div {display: none}
+        #tab-content > div:first-child {
+            display: block;
+        }
+        .tab-menu li a.active {
+            color :#fff;
+        }
+        .nav {position: relative;}
+        .highlight {position: absolute; width: 98px; top: 0; left: 0; bottom: 0; background: #000; transition: 0.4s cubic-bezier(0.65, 0, 0.35, 1);}
+    </style>
+</head>
+<body>
+    <div class="tab-wrapper">
+        <div class="nav">
+            <ul class="tab-menu">
+                <li><a href="">basic</a></li>
+                <li><a href="">advanced</a></li>
+                <li><a href="">expert</a></li>
+            </ul>
+            <span class="highlight"></span>
+        </div>
+        <div id="tab-content">
+            <div id="tabs-1">안녕하세요 1번입니다.</div>
+            <div id="tabs-2">안녕하세요 2번입니다.</div>
+            <div id="tabs-3">안녕하세요 3번입니다.</div>
+        </div>
+    </div>
+    <script>
+        // const = 변수에 다름 값 저장하지 않음 
+        const tabMenu = document.querySelectorAll('.tab-menu li');
+        const tabContent = document.querySelectorAll('#tab-content > div');
+        const highLight = document.querySelector('.highlight');
+
+        tabMenu.forEach(function(item, idx){
+            item.addEventListener('click', function(e){
+                e.preventDefault();
+                showContent(idx);
+                moveHightLight(idx);
+            });
+        });
+        function showContent(num){
+            tabContent.forEach(function(item){
+                item.style.display = 'none';
+            });
+            tabContent[num].style.display = 'block';
+            console.log(tabContent[num]);
+        }
+        function moveHightLight(num){
+            const newLeft = tabMenu[num].offsetLeft;
+            const newWidth = tabMenu[num].offsetWidth;
+            highLight.style.left = newLeft + 'px';
+            highLight.style.width = newWidth + 'px';
+        }
+    </script>
+</body>
+</html>
