@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .notice {position: fixed; top: 100px; left: 100px; padding: 20px; border: 1px solid #ccc;}
+    </style>
+</head>
+<body>
+    <div class="notice">Notice</div>
+    <button onclick="deleteCookie();">쿠키 지우기</button>
+    <script>
+        
+        console.log(document.cookie);
+        var currentCookie = document.cookie;
+        var cookieCheck = currentCookie.indexOf('ABC'); //indexOf() 인덱스에 있는지 없는지 확인
+        if(cookieCheck > -1){
+            document.querySelector('.notice').style.display = 'none';
+        }else {
+            document.querySelector('.notice').style.display = 'block';
+        } 
+        // (cookieCheck > -1) 인덱스 값이 없을 경우 -1, -1보다 클 경우 = 값이 있음
+
+        var date = new Date();
+        date.setDate(date.getDate() + 7);
+        
+        var setCookie=''; 
+        setCookie = 'CookieName = ABC;';
+        setCookie += 'expires =' + date.toUTCString(); 
+        //UTC 시간으로 변경, UTC = GMT
+        // 크롬 개발자 모드 > Application > cookies 에서 확인 가능, ''에 해당 내용 바꿔서 지정 가능'
+        
+        document.cookie = setCookie;
+
+        function deleteCookie(){
+            var date = new Date();
+            date.setDate(date.getDate() -1);
+            
+            var setCookie='';   
+            setCookie = 'CookieName = ABC;';
+            setCookie += 'expires =' + date.toUTCString(); 
+            //UTC 시간으로 변경, UTC = GMT
+            // 크롬 개발자 모드 > Application > cookies 에서 확인 가능, ''에 해당 내용 바꿔서 지정 가능'
+            
+            document.cookie = setCookie;
+        }
+    </script>
+</body>
+</html>
