@@ -1,0 +1,98 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=Orbitron);
+@font-face {
+    font-family: 'NIXGONM-Vb';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*  Reset CSS  */
+* { margin:0;  padding:0;}
+ol,ul { list-style: none; }
+a { outline:0; text-decoration:none; color:#555; }
+img { border:0;}
+body { width:100%; height: 23000px; font-family:'NIXGONM-Vb'; font-size:12px; } 
+/* 배경이미지 */
+.bg{position:fixed; width:100%; height:100%; top:0px; left:0px; background:url(../images/bg11.jpg) no-repeat center; background-size:cover;}
+/* 로고 */
+h1{position:fixed; top:60px; left:78px; z-index:2; }
+h1 img{width:80px;}
+
+/* 주메뉴 */
+.gnb{position:fixed; top:60px; right:250px; z-index:2;}
+.gnb:after{content:''; display:block; clear:both;}
+.gnb li{float:left; margin-left:50px;}
+.gnb li a{display:block; font-size:14px; font-weight:bold; color:#666; transform:scale(1); opacity:0.5; transition:all 0.5s;}
+.gnb li a:hover{transform:scale(1.5); opacity:1;}
+
+/* sns */
+.sns{position:fixed; top:60px; right:50px; z-index:2;}
+.sns:after{content:''; display:block; clear:both;}
+.sns li{float:left; margin-left:30px;}
+.sns li .fab{display:block; font-size:18px; color:#888; transform:scale(1); opacity:0.5; transition:all 0.5s;}
+.sns li .fab:hover{transform:scale(1.5); opacity:1;}
+
+
+/* 스크롤 네비게이션 */
+.scrollNavi{position:fixed; left:100px; top:300px; z-index:2;}
+.scrollNavi li{margin-bottom:20px; position:relative; width:150px; height:35px; font-size:12px; color:#fff; text-align:center; perspective:400px; cursor:pointer;}
+.scrollNavi li em{position:absolute; top:8px; left:20px; font-size:14px; font-weight:bold; color:#fff; text-shadow:1px 1px 1px #000;}
+.scrollNavi li span{display:block; width:3%; height:100%; position:absolute; transform:skewX(-30deg); box-shadow:1px 1px 1px #000;}
+.scrollNavi li.on span{width:100%;}
+.scrollNavi li:nth-child(1) span{background:#F2C838;}
+.scrollNavi li:nth-child(2) span{background:#FCBD3A;}
+.scrollNavi li:nth-child(3) span{background:#E69E40;}
+.scrollNavi li:nth-child(4) span{background:#FC8C3A;}
+.scrollNavi li:nth-child(5) span{background:#F26B38;}
+
+/* 카피라이트 */
+.copyright{position:fixed; bottom:20px; right:30px; font-family:arial, sans-serif; font-size:11px; color:#555;}
+
+
+/* 박스그룹레이아웃 */
+section{position:fixed; width:1200px; height:700px; left:50%; top:50%; margin-left:-600px; margin-top:-350px; perspective:2300px; z-index:1;}
+section>article{color:#fff; width:1200px; height:700px; position:absolute; top:0px; left:0px; opacity:0.5; z-index:1; }
+section>article.on{opacity:1; z-index:9;}
+section>article:nth-child(1){transform:translateZ(0px);}
+section>article:nth-child(2){transform:translateZ(-5000px);}
+section>article:nth-child(3){transform:translateZ(-10000px);}
+section>article:nth-child(4){transform:translateZ(-15000px);}
+section>article:nth-child(5){transform:translateZ(-20000px);}
+
+/* 박스폰트 및 이미지 공통속성 */
+section>article>p{position:absolute; width:450px; padding:30px 60px; color:#fff; opacity:1;}
+section>article>p>span{font-family:'NIXGONM-Vb'; font-size:60px; letter-spacing:0px; line-height:1.5;}
+section>article>p>span.price{font-family:'NIXGONM-Vb'; font-size:40px; letter-spacing:0px; line-height:1.5; margin-left:15px;}
+section>article>p>em{font-family:'NIXGONM-Vb'; font-size:18px; letter-spacing:-0.5px;}
+section>article>img{position:absolute;}
+
+/* 첫번째 박스 콘텐츠 */
+section>article:nth-child(1) p{bottom:100px; right:-200px;}
+section>article:nth-child(1) p span{color:#F2C838;}
+.obj1{bottom:-150px; left:0px;}
+
+/* 두번째 박스 콘텐츠 */
+section>article:nth-child(2) p{bottom:150px; left:100px;}
+section>article:nth-child(2) p span{color:#FCBD3A;}
+.obj2{bottom:-150px; right:-200px;}
+
+/* 세번째 박스 콘텐츠 */
+section>article:nth-child(3) p{bottom:100px; right:-200px;}
+section>article:nth-child(3) p span{color:#E69E40;}
+.obj3{bottom:-150px; left:0px;}
+
+/* 네번째 박스 콘텐츠 */
+section>article:nth-child(4) p{bottom:150px; left:100px;}
+section>article:nth-child(4) p span{color:#FC8C3A;}
+.obj4{bottom:-150px; right:-200px;}
+
+/* 다섯번째 박스 콘텐츠 */
+section>article:nth-child(5) p{bottom:100px; right:-200px;}
+section>article:nth-child(5) p span{color:#F26B38;}
+.obj5{bottom:-150px; left:0px;}
+
+
+
+
+
+

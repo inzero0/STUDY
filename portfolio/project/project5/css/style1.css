@@ -1,0 +1,189 @@
+/* scss */
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  outline: 0;
+  text-decoration: none;
+  color: #555;
+}
+
+img {
+  border: 0;
+}
+
+body {
+  font: 12px/1.6 'Playfair Display', serif;
+  color: #555;
+}
+
+/* layout */
+header {
+  position: fixed;
+  top: 0px;
+  bottom: auto;
+  left: 0px;
+  right: auto;
+  width: 15%;
+  height: 100%;
+  background: #5a504a;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+header h1 {
+  position: absolute;
+  top: 70px;
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  width: 180px;
+  height: 136px;
+  background: url(../img/logo.svg) no-repeat 0px 0px;
+  background-size: contain;
+  margin-left: -90px;
+  text-indent: -99999999px;
+}
+
+#gnb {
+  position: absolute;
+  top: 300px;
+  bottom: auto;
+  left: 46%;
+  right: auto;
+}
+
+#gnb li {
+  position: relative;
+  top: auto;
+  bottom: auto;
+  left: -46%;
+  right: auto;
+  display: block;
+}
+
+#gnb a {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #bbb;
+  text-align: left;
+  line-height: 1.8;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#gnb a:hover {
+  color: skyblue;
+}
+
+#gnb a i {
+  margin-right: 13px;
+}
+
+.snsSet {
+  width: 102px;
+  height: 30px;
+  position: absolute;
+  top: auto;
+  bottom: 50px;
+  left: auto;
+  right: 50%;
+  margin-right: -50px;
+}
+
+.snsSet a {
+  float: left;
+  margin-right: 15px;
+}
+
+.snsSet a:last-child {
+  margin: 0;
+}
+
+.snsSet a i {
+  font-size: 2em;
+  color: #aaa;
+}
+
+header {
+  background: #5a504a;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+header h1 {
+  width: 180px;
+  height: 136px;
+  background: url(../img/logo.svg) no-repeat 0px 0px;
+  background-size: contain;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  margin-left: -90px;
+  text-indent: -999999999px;
+}
+
+#gnb {
+  position: absolute;
+  top: 300px;
+  left: 46%;
+}
+
+#gnb li {
+  position: relative;
+  left: -46%;
+  display: block;
+}
+
+#gnb a {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #bbb;
+  text-align: left;
+  line-height: 1.8;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#gnb a:hover {
+  color: skyblue;
+}
+
+#gnb a i {
+  margin-right: 13px;
+}
+
+.snsSet {
+  width: 102px;
+  height: 30px;
+  position: absolute;
+  bottom: 50px;
+  margin-right: -50px;
+  right: 50%;
+}
+
+.snsSet a {
+  float: left;
+  margin-right: 15px;
+}
+
+.snsSet a i {
+  font-size: 2em;
+  color: #aaa;
+}
+
+.snsSet a:last-child {
+  margin: 0;
+}
+/*# sourceMappingURL=style1.css.map */

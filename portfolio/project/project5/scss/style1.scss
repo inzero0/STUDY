@@ -1,0 +1,587 @@
+/* scss */
+@mixin Position($position,$top,$right,$bottom,$left){
+    position:$position;
+    top:$top;
+    bottom:$bottom;
+    left:$left;
+    right:$right;
+}
+@mixin BgTransition($bg,$transition){
+    background:$bg;
+    transition:$transition;
+}
+@mixin bgImgbgPosition($bgImg,$bgPosition){
+    background-image:$bgImg;
+    background-position:$bgPosition;
+}
+@mixin articleWidthBg($width,$background){
+    width:$width;
+    background:$background;
+}
+@mixin articleWidth($width){
+    width:$width;
+}
+@mixin WidthHeight($width,$height){
+    width:$width;
+    height:$height;
+}
+@mixin font($font-size,$color){
+    font-size:$font-size;
+    color:$color;
+}
+%widthMargin{
+    width:100%;
+    margin-left:0;
+}
+$block:block;
+$hidden:hidden;
+$bgspan:#888;
+
+/* reset */
+*{margin:0; padding:0;}
+ol, ul{list-style:none;}
+a{outline:0; text-decoration:none; color:#555;}
+img{border:0;}
+body{font:12px/1.6 'Playfair Display', serif; color:#555;}
+
+/* layout */
+header{
+    @include Position(fixed,0px,auto,auto,0px);
+    @include WidthHeight(15%,100%);
+    @include BgTransition(#5a504a,all 0.5s);
+    h1{
+        @include Position(absolute,70px,auto,auto,50%);
+        @include WidthHeight(180px,136px);
+        background:url(../img/logo.svg) no-repeat 0px 0px;
+        background-size:contain;
+        margin-left:-90px;
+        text-indent:-99999999px;
+    }
+}
+#gnb{
+    @include Position(absolute,300px,auto,auto,46%);
+    li{
+        @include Position(relative,auto,auto,auto,-46%);
+        display:$block;
+    }
+    a{
+        @include font(17,#bbb);
+        display:$block; margin-bottom:16px; font-weight:bold; text-align:left; line-height:1.8; transition:all 0.5s;
+        &:hover{color:skyblue;}
+        i{margin-right:13px;}
+    }
+}
+.snsSet{
+    @include WidthHeight(102px,30px);
+    @include Position(absolute,auto,50%,50px,auto);
+    margin-right:-50px;
+
+    a{float:left; margin-right:15px;
+        &:last-child{margin:0;}
+        i{font-size:2em; color:#aaa;}
+    }
+}
+nav{
+    @include Position(relative,auto,auto,auto);
+    @include WidthHeight(85%,35px);
+    @include BgTransition(#102868,all 0.5s);
+    margin-left:15%;
+    a:nth-child(1){
+        @include Position(absolute,5px,auto,auto,10px)
+    }
+    a:nth-child(2){
+        @include Position(absolute,5px,auto,auto,136px)
+    }
+    a:nth-child(3){
+        @include Position(absolute,5px,auto,100px,auto)
+    }
+    a:nth-child(4){
+        @include Position(absolute,5px,auto,10px,auto)
+    }
+}
+
+section{
+    width:85%; position:relative; margin-left:15%;
+}
+article{float:left; height:260px; transition:all 0.5s;animation:myscale 1s 1;
+    @keyframes myscale{
+        0%{transform:scale(0)}
+        100%{transform:scale(1)}
+    }    
+    &:nth-child(1){
+        @include articleWidthBg(60%,#ddd);
+        height:520px;
+    }
+    &:nth-child(2){
+        @include articleWidthBg(40%,#ccc);
+    }
+    &:nth-child(3){
+        @include articleWidthBg(20%,#bbb);
+        .txt{
+            background:#024b74;
+            i{
+                @include Position(absolute,auto,-15px,10px,auto);
+                @include font(5.124rem,#fff);
+                opacity:0.7
+            }
+        }
+    }
+    &:nth-child(4){
+        @include articleWidthBg(20%,#aaa);
+    }
+    &:nth-child(5){
+        @include articleWidthBg(20%,#999);
+    }
+    &:nth-child(6){
+        @include articleWidthBg(40%,#888);
+        .txt{background:#6d2822;}
+        &:hover{
+            .txt{
+                background:#222;
+                color:#fff;
+            }
+        }
+    }
+    &:nth-child(7){
+        @include articleWidthBg(20%,#777);
+    }
+    &:nth-child(8){
+        @include articleWidthBg(20%,#666);
+    }
+    &:nth-child(9){
+        @include articleWidthBg(40%,#555);
+    }
+    &:nth-child(10){
+        @include articleWidthBg(20%,#444);
+    }
+    &:nth-child(11){
+        @include articleWidthBg(20%,#333);
+        .txt{
+            background:#586920;
+            i{
+                @include Position(absolute,140px,-0px,auto,auto);
+                @include font(7rem,#fff);
+                opacity:0.7
+            }
+        }
+    }
+    &:nth-child(12){
+        @include articleWidthBg(20%,#222);
+    }
+    &:hover{
+        bg{
+            span{
+                opacity:1; transform:scale(1);
+            }
+        }
+        .txt{
+            i{
+                right:0px; opacity:0.5;
+            }
+            strong{
+                color:#fff;
+            }
+        }
+    }
+    .txt{
+        @include BgTransition(#a28f7d,all 1s);
+        color:#ccc;  box-sizing:border-box; padding:40px 0 0 50px;
+        i{
+            @include font(7rem,#d2c7c4);
+            @include Position(absolute,auto,200px,10px,auto);
+            opacity:0;
+            transition:all 0.7s;
+            margin-right:35px;
+        }
+        strong{
+            @include font(30px,#222);
+            line-height:1.6;
+            font-weight:normal;
+            margin-bottom:20px;
+            transition:all 1s;
+        }
+    }
+    &>div{
+        @include Position(relative,auto,auto,auto,auto);
+        @include WidthHeight(100%,100%);
+        overflow:$hidden;
+        cursor:pointer;
+    }
+    .bg{background-size:cover;
+        span{
+            @include font(3.7em, #fff);
+            @include Position(absolute,auto,20px,0,auto);
+            transform:scale(10);
+            opacity:0;
+            transition:all 0.6s;
+        }
+    }
+    .bg1{
+        @include bgImgbgPosition(url(../img/banner1.png),center center);
+        span{
+            @include font(7.5em, #fff);
+            @include Position(absolute,35%,auto,auto,25%);
+            transform:scale(10);
+            opacity:0;
+            transition:all 0.5s;
+            display:$block;
+        }
+        &:hover{
+            span{
+                transform:rotateY(360deg);
+            }
+        }
+    }
+    .bg2{
+        @include bgImgbgPosition(url(../img/banner2.png),0 80%);
+    }
+    .bg3{
+        @include bgImgbgPosition(url(../img/banner3.png),0 90%);
+        span{font-size:3em;}
+    }
+    .bg4{
+        @include bgImgbgPosition(url(../img/machine.png),auto);
+        span{font-size:$bgspan;}
+    }
+    .bg5{
+        @include bgImgbgPosition(url(../img/capsule1.png),0 40%);
+        span{font-size:$bgspan;}
+
+    }
+    .bg6{
+        @include bgImgbgPosition(url(../img/banner4.png),0 95%);
+        span{font-size:2.5em;}
+
+    }
+    .bg7{
+        @include bgImgbgPosition(url(../img/recycle.png),auto);
+        span{font-size:$bgspan;}
+
+    }
+}
+@media screen and (min-width:1280px) and (max-width:1599px){
+    header{
+        @include WidthHeight(100%,80px);
+        position:relative;
+        h1{
+            @include WidthHeight(200px,40px);
+            background-image:url(../img/logo.svg); top:20px; left:0; margin-left:20px;
+        }
+    }
+    nav{
+        @extend %widthMargin;
+    }
+    section{
+        @extend %widthMargin;
+    }
+    #gnb{
+        @include Position(absolute,14px,auto,auto,0);
+        margin-left:240px;
+        li{
+            @include Position(relative,auto,auto,auto,0);
+            float:left;
+            padding:8px 25px;
+        }
+    }
+    .snsSet{bottom:20px; right:80px;}
+}
+@media screen and (min-width:1024px) and (max-width:1279px){
+    header{
+        @include WidthHeight(100,80px);
+        position:relative;
+        h1{
+            @include WidthHeight(200px,40px);
+            @include Position(absolute,18px,auto,auto,20px);
+            margin-left:0;
+            background-image:url(../img/logo.svg);
+        }
+    }
+    nav{@extend %widthMargin;}
+    #gnb{
+        @include Position(absolute,14px,auto,auto,0);
+        margin-left:250px;
+    }
+    #gnb li{
+        @include Position(relative,auto,auto,auto,0);
+        float:left;
+        padding:8px 25px;
+    }
+    .snsSet{
+        bottom:20px; right:80px;
+    }
+    section{width:100%; margin-left:0%;}
+    article{
+        &:nth-child(1){
+            width:75%;
+        }
+        &:nth-child(2){
+            width:25%;
+        }
+        &:nth-child(3){
+            width:25%;
+        }
+        &:nth-child(4){
+            width:25%;
+        }
+        &:nth-child(5){
+            width:25%;
+        }
+        &:nth-child(6){
+            width:50%;
+        }
+        &:nth-child(7){
+            width:50%;
+        }
+        &:nth-child(8){
+            width:25%;
+        }
+        &:nth-child(9){
+            width:25%;
+        }
+        &:nth-child(10){
+            width:50%;
+        }
+        &:nth-child(11){
+            width:25%;
+        }
+        &:nth-child(12){
+            width:25%;
+        }
+    }
+}
+@media screen and (min-width:780px) and (max-width:1023px){
+    header{
+        @include WidthHeight(100%,80px);
+        h1{
+            @include WidthHeight(200px,40px);
+            background-image:url(../img/logo.svg); top:20px; left:20px; margin-left:0; 
+        }
+    }
+    nav{
+        @extend %widthMargin;
+    }
+    #gnb{
+        @include Position(absolute,5px,auto,auto,0px);
+        margin-left:240px;
+        li{
+            @include Position(relative,auto,auto,auto,0);
+            float:left;
+            padding:8px;
+            a{
+                padding:10px 8px;
+                i{margin-right:8px;}
+            }
+        }
+
+    }
+    section{
+        @extend %widthMargin;
+    }
+    articl{
+        &:nth-child(1){
+            @include WidthHeight(100%,400px);
+        }
+        &:nth-child(2){
+            width:66.6666%;
+        }
+        &:nth-child(3){
+            width:33.3333%;
+        }
+        &:nth-child(4){
+            display:none;
+        }
+        &:nth-child(5){
+            width:33.3333%;
+        }
+        &:nth-child(6){
+            width:66.6666%;
+        }
+        &:nth-child(7){
+            width:33.3333%;
+        }
+        &:nth-child(8){
+            width:33.3333%;
+        }
+        &:nth-child(9){
+            width:33.3333%;
+        }
+        &:nth-child(10){
+            display:none;
+        }
+        &:nth-child(11){
+            width:33.3333%;
+        }
+        &:nth-child(12){
+            display:none;
+        }
+    }
+    .snsSet{display:none;}
+}/* min-width:780px */
+
+@media screen and (min-width:640px) and (max-width:779px){
+    header{
+        @include WidthHeight(100%,130px);
+        position:relative;
+        h1{
+            @include Position(relative,20px,0,0,50%);
+            @include WidthHeight(154px,50px);
+            background-image: url(../img/logo.svg);
+            margin:0 0 auto -77px;
+        }
+    }
+    nav{
+        @extend %widthMargin;
+    }
+    section{
+        @extend %widthMargin;
+    }
+    #gnb{
+        @include Position(absolute,80px,auto,auto,0);
+        @include WidthHeight(100%,auto);
+        padding:0;
+        li{
+            @include Position(relative,auto,auto,auto,0);
+            width:25%;
+            float:left;
+            padding:0;
+            a{
+                padding:p;
+                margin:0;
+                text-align:center;
+            }
+        }
+    }
+    .snsSet{display:none;}
+
+    article{
+        &:nth-child(1){
+            @include WidthHeight(100%,400px);
+        }
+        &:nth-child(2){
+            width:100%;
+        }
+        &:nth-child(3){
+            display:none;
+        }
+        &:nth-child(4){
+            display:none;
+        }
+        &:nth-child(5){
+            width:50%;
+        }
+        &:nth-child(6){
+            width:50%;
+        }
+        &:nth-child(7){
+            display:none;
+        }
+        &:nth-child(8){
+            width:50%;
+        }
+        &:nth-child(9){
+            width:50%;
+        }
+        &:nth-child(10){
+            display:none;        
+        }
+        &:nth-child(11){
+            width:50%;
+        }
+        &:nth-child(12){
+            width:50%;
+        }
+    }
+
+}/* min-width:640px */
+@media screen and (min-width:480px) and (max-width:639px){
+    header{
+        @include WidthHeight(100%,182px);
+        position:relative;
+        h1{
+            @include Position(relative,16px,auto,auto,50%);
+            @include WidthHeight(154px,50px);
+            background-image:url(../img/logo.svg); 
+            margin:0 auto 0 -77px;
+        }
+    }
+    nav{display:none;}
+    section{
+        @extend %widthMargin;
+    }
+    #gnb{
+        @include Position(absolute,80px,auto,auto,0px);
+        @include WidthHeight(100%,auto);
+        padding:0px;
+        float:right;
+        li{
+            @include Position(relative,auto,auto,auto,0);
+            width:50%;
+            float:right;
+            padding:0px;
+            margin:0px;
+            display:block;
+            border-top:1px solid #ccc; box-sizing:border-box;
+            a{padding:10px; margin:0px; text-align:center;}
+            a:hover{color:#fff; background:skyblue;}
+        }
+        li.odd{float:left; border-right:1px solid #ccc;}
+    }
+    .snsSet{display:none;}
+    article{
+        height:150px;
+        &:nth-child(1){
+            @include WidthHeight(100%,300px);
+        }
+        &:nth-child(2){width:100%;}
+        &:nth-child(3){display:none;}
+        &:nth-child(4){display:none;}
+        &:nth-child(5){width:50%;}
+        &:nth-child(6){width:50%;}
+        &:nth-child(7){display:none;}
+        &:nth-child(8){width:50%;}
+        &:nth-child(9){width:50%;}
+        &:nth-child(10){display:none;}
+        &:nth-child(11){width:50%;}
+        &:nth-child(12){width:50%;}
+        .bg1{
+            span{
+                font-size:120px; bottom:-50px;
+            }
+        }
+        txt {
+            strong{font-size:25px;}
+            em{display:none;}
+        }   
+    }
+}/* min-width:480px */
+@media screen and (max-width:479px){
+    header{
+        @include WidthHeight(100%,40px);
+        position:fixed;
+        background-color:transparent;
+        z-index:5;
+        h1{
+            top:-90px; background-image:url(../img/logo.svg); height:200px;
+        }
+    }
+    nav{display:none;}
+    section{@extend %widthMargin; z-index:4;}
+    article{
+        display:none;
+        &:nth-child(1){display:block; position:fixed;
+            @include WidthHeight(100%,100%);
+            span{display:none;}
+        }
+    }
+    #gnb{
+        width:250px; top:160px; right:50%; margin-right:-125px;
+        a{
+            width:100%; background:#000; box-sizing:border-box; margin:8px 0px; border-radius:10px; opacity:0.5s; color:#fff; padding:8px 14px 8px 24px;
+        }
+        a:hover{
+            opacity:1; transform:scale(1.1);
+        }
+    }
+
+}/* max-width:479px */
+
