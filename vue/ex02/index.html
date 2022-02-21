@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{ nextYear('안녕하세요') }}
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                person: {
+                    name: '여인영',
+                    age: 23
+                }
+            },
+            methods: {
+                nextYear: function (greeting) {
+                    return greeting + '! ' +this.person.name + '은 내년에' + (this.person.age + 1) + '살 입니다';
+                    // vue에서는 data에 있는 내용을 this에 넣어줌
+                    // this.nextYear 하면 다른 메소드에서도 사용 가능함
+                    //매개변수(함수 안에서 사용되는 변수), 인자(함수를 사용할 때 넣어주는 값) 를 사용할 수 있음.
+                    //function을 줄여서 작성 가능 -> nextYear(greeting) {}
+                },
+                otherMethod: function() {
+                    this.nextYear();
+                }
+            }
+        })
+    </script>
+</body>
+</html>
