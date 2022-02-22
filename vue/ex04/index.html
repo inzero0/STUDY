@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{ year }} <br/>
+        <button v-on:click="plus">더하기</button>
+        <button v-on:click="minus">빼기</button>
+        <!-- 
+            v-on:click 
+            틀은 유지, 데이터만 수정 됨
+        -->
+        <form v-on:submit.prevent="submit">
+            <input type="text"> <br/>
+            <button type="submit">submit</button>
+        </form>
+        <!-- form은 submit을 하면 자동으로 새로 고침함 -->
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                year: 2018
+            },
+            methods: {
+                plus() {
+                    this.year++;
+                },
+                minus() {
+                    this.year--;
+                },
+                submit() {
+                    alert('submitted');
+                }
+            }
+        })
+    </script>
+</body>
+</html>
