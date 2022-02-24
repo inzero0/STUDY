@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>computed</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="ChangeMessage">btn</button>
+        {{ reserveMessage }}
+        {{ reserveMessage }}
+        {{ reserveMessage }}
+        <!-- message 내용을 자르고 다시 마지막부터 정렬 후 합침 -->
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: '안녕하세요',
+            },
+            methods: {            
+                ChangeMessage() {
+                    this.message= '여인영';
+                }
+            },
+            computed : {
+                reserveMessage() {
+                    return this.message.split('').reverse().join('')
+                }
+
+            }
+        })
+        /* methods와 computed 차이 : 
+        computed 이미 계산이 되어있음(처음에 한 번 계산되고 저장된 값을 사용, 데이터가 바뀌지 않는 한 처음에 계산되어있는 내용 유지), 
+        methods는 사용할 때마다 불러옴 */
+
+        /* method와 computed가 같은 데이터를 사용
+        thods에서 바뀐 데이터를 인지하고
+        computed는 바뀐 데이터를 가지고 옴  */
+    </script>
+</body>
+</html>
