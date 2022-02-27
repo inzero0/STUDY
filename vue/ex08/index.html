@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div :style="{ color: red, fontSize: size }">hello</div>
+        <div :class="{ red: isRed, bold: isBold }">hello</div>
+        <button @click="update">button</button>
+        <!-- 스타일을 자바스크립트 객체처럼 넣어도 되고, class로 데이터 바인딩을 줘서 해결해도 됨 -->
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                isRed: false,
+                isBold: false,
+                red: 'red',
+                size: '30px',
+            },
+            methods: {            
+              update() {
+                  this.isRed = !this.isRed;
+                  this.isBold = !this.isBold;
+              }
+            },
+        })
+    </script>
+</body>
+</html>
