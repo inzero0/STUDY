@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <template v-if="show">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </template> 
+        <div v-if="show">Yes</div>
+        <button @click="toggleShow">Toggle</button>
+        <br/>
+        <br/>
+        <template v-if="number === 1">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </template> 
+        <div v-else-if="number === 2">Hi</div>
+        <div v-else>No</div>
+        <button @click="increaseNumber">increase</button>
+        {{ number }}
+        <br/>
+        <div v-show="show2">Yes</div>
+        <br/>
+        <button @click="toggle">toggle</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                number: 1,
+                show: true,
+                show2: true
+                // false는 안 보임
+            },
+            methods: {         
+                toggleShow() {
+                    this.show = !this.show;
+                },
+                increaseNumber () {
+                    this.number++;
+                },
+                toggle() {
+                    this.show2 = !this.show2;
+                } 
+            },
+        })
+        // v-if는 토글을 계속 해야하기 때문에 토글 비용이 높다
+        // v-show는 style로 제어, 초기에 토글 비용이 높고, 매우 자주 바뀌지 않으면 v-if 사용하기
+    </script>
+</body>
+</html>
