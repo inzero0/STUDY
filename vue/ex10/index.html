@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div>{{ people[0].name}} {{ people[0].age}}</div>
+        <div>{{ people[1].name}} {{ people[1].age}}</div>
+        <div>{{ people[2].name}} {{ people[2].age}}</div>
+        <div v-for="(person, index) in people" :key="person.id">
+            <!-- 
+                in 대신 of를 사용할 수 있음 
+                key 속성 지정 : 필수적으로 넣어야하고, 고유한 값으로 가지고 와야함
+                고유한 값으로 정하기 힘들 때 id를 가지고 옴
+                index를 넣어주게 되면 내용 삭제 시 요소가 가지고 있는 인덱스가 바뀌면서 고유한 값이 아님
+                v-for로 객체를 사용할수도 있음(리스트에 자주 씀)
+            -->
+            {{ person.name }} {{ person.age }} {{ index }}
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                people: [
+                    { id: 1, name: 'a', age: 20},
+                    { id: 2, name: 'b', age: 21},
+                    { id: 3, name: 'c', age: 22},
+                ]
+            },
+            methods: {         
+            },
+        })
+    </script>
+</body>
+</html>
