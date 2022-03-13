@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <lucy-button></lucy-button>
+    </div>
+    <div id="app-1">
+        <lucy-button></lucy-button>
+    </div>
+        
+    <script>
+        // 전역 등록
+        /* 
+            전역등록의 단점은 컴포넌트를 사용하지 않아도 사용자가 내려 받아야함
+            -> 자바스크립트의 양이 불필요하게 많아지고 속도 저하 일어남
+        */
+        // Vue.component('hello-world', {
+        //     template: '<div>hello world</div>'
+        // });
+        /*  
+            Vue.component('Lucy-button', {
+                template: `
+                <div>
+                    {{ name }}
+                    <hello-world></hello-world>
+                    <button @click="changeText">Click</button>
+                </div>
+                `,
+                data() {
+                    return {
+                        name: 'Lucy'
+                    }
+                    여러군데에서 컴포넌트를 사용할 경우, a에서 데이터를 업데이트 할 경우 b에서도 업데이트 됨 -> return 처리 하여 방지 
+                },
+                methods: {     
+                    changeText() {
+                        this.name = 'Lucy updated';
+                    }
+                },
+            });
+         */
+        const HelloWorld = {
+            template: '<div>hello World</div>'
+        }        
+        const LucyButton = {
+            components: {
+                'hello-world': HelloWorld
+            },
+            template: `
+            <div>
+                {{ name }}
+                <hello-world></hello-world>
+                <button @click="changeText">Click</button>
+            </div>
+            `,
+            data() {
+                return {
+                    name: 'Lucy'
+                }
+                // 여러군데에서 컴포넌트를 사용할 경우, a에서 데이터를 업데이트 할 경우 b에서도 업데이트 됨 -> return 처리 하여 방지 
+            },
+            methods: {     
+                changeText() {
+                    this.name = 'Lucy updated';
+                }
+            },
+        };
+        const app = new Vue({
+            el: '#app',
+            components: {
+                'lucy-button': LucyButton
+                // 이름을 표기할 때 케밥케이스(소문자 시작)와 파스칼 케이스(대소문자사용가능)로 표현할 수 있음.
+            }
+        })
+        const app1 = new Vue({
+            el: '#app-1',
+            components: {
+                'lucy-button': LucyButton
+            }
+        })
+
+    </script>
+</body>
+</html>
