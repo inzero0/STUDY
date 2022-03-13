@@ -10,7 +10,7 @@
 <body>
     <div id="app">
         {{ nextYear('안녕하세요') }}
-        <input :type="type" v-:value="inputData">
+        <input :type="type" :value="inputData">
         <a :href="getNaverLink('kossiecoder')">네이버</a>
         <!-- 
             v-bind 데이터를 바인딩 함  
@@ -28,7 +28,7 @@
                 },
                 inputData: 'hello',
                 type: 'number',
-                link: 'https//www.youtube.com/'
+                link: 'https://www.youtube.com/'
             },
             methods: {
                 getNaverLink(channel) {
